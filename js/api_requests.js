@@ -21,32 +21,46 @@ function handleError(result) {
 /*--------------------------------------------------------------------------------------------------------------------*/
 /* get CG iframe url */
 function drawPaymentLinkPageData(hash){
-    var payload = {
-        page_hash:hash
-    }
+    // Mocking the backend response for static hosting
+    var result = {
+        err: null,
+        data: {
+            business_name: "גרו ביזנס",
+            sum: "250.00",
+            type_id: 2,
+            description: "תשלום עבור שירות - Payment for service",
+            payment_link_background_color: "#f0f2f5",
+            payment_link_btn_color: "#1a1a5e",
+            payment_link_btn_text: "לתשלום",
+            payment_link_direct_debit_message: "",
+            environment: "sandbox"
+        }
+    };
     
-    $.post('api/light/web/1.0/drawPaymentLinkPageData', payload, function (result) {
+    setTimeout(function() {
         if (result.err){
             $.publish('onPageDataError', result.err);
         } else {
             $.publish('onPageDataResponse', result.data);
         }
-    },"json");
+    }, 500);
 }
 
-
-
 function doPaymentLinkTransaction(hash){
-    var payload = {
-        page_hash:hash
-    }
+    // Mocking the transaction response
+    var result = {
+        err: null,
+        data: {
+            authCode: "DEMO_AUTH_CODE_12345"
+        }
+    };
     
-    $.post('api/light/web/1.0/doPaymentLinkTransaction', payload , function (result) {
+    setTimeout(function() {
         if (result.err){
             GeneralMsg.setMessage(result.err.message);
             GeneralMsg.show();
         } else {
             $.publish('onPaymentLinkTransaction', result.data);
         }
-    },"json");
+    }, 500);
 }
