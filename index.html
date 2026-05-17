@@ -1,0 +1,192 @@
+<!DOCTYPE html><html lang="he"><head>
+    <title>grow מבית משולם פתרונות תשלום - </title>
+<meta charset="UTF-8">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta http-equiv="imagetoolbar" content="yes">
+<meta name="theme-color" content="#000000">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta property="og:title" content="">
+<meta property="og:site_name" content="">
+<meta property="og:url" content="">
+<meta property="og:description" content="">
+<meta property="og:image" content="">
+
+   <meta name="robots" content="noindex">
+<!--   <meta name="robots" content="index, follow" />-->
+
+<link rel="shortcut icon" href="images/grow-icon.png">
+
+<script type="text/javascript" async="" src="js/gs.min.js"></script><script type="text/javascript" async="" src="js/ga.js"></script><script type="text/javascript">
+
+var mdlName='payment_link';
+var mdlID='1';
+var objID='55';
+var devMode = false;
+
+
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-46680290-1']);
+_gaq.push(['_setDomainName', 'meshulam.co.il']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+<script type="text/javascript">
+    var typesArr = {"1":"עוסק מורשה","2":"חברה בע\"מ","3":"עמותה","4":"עוסק פטור","5":"שותפות","6":"אגודה שיתופית","7":"חל\"צ"};
+    var business_type_properties = {"1":{"business_type":1,"license_num_field_title":"ת\"ז","company_count_tz":0},"2":{"business_type":2,"license_num_field_title":"ח\"פ","company_count_tz":1},"3":{"business_type":3,"license_num_field_title":"ח\"פ","company_count_tz":2},"4":{"business_type":4,"license_num_field_title":"ת\"ז","company_count_tz":0},"5":{"business_type":5,"license_num_field_title":"מספר שותפות","company_count_tz":2},"7":{"business_type":7,"license_num_field_title":"ח\"פ","company_count_tz":2}};
+    var send_opreationArr = {"send_sms_mail":1,"only_registration":2};
+    var send_type = 1;
+</script>
+    <link rel="preload" href="//cdn.meshulam.co.il/_media/fonts/ploni/ploni-regular-aaa.woff" as="font" type="font/woff" crossorigin="anonymous">
+    <link rel="preload" href="//cdn.meshulam.co.il/_media/fonts/ploni/ploni-light-aaa.woff" as="font" type="font/woff" crossorigin="anonymous">
+    <link rel="preload" href="//cdn.meshulam.co.il/_media/fonts/ploni/ploni-bold-aaa.woff" as="font" type="font/woff" crossorigin="anonymous">
+    <link rel="preload" href="//cdn.meshulam.co.il/_media/fonts/rubik/Rubik-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+
+    <!-- fonts -->
+    <style>
+        @font-face {
+            font-family: "Ploni-Regular";
+            src: url("fonts/ploni-regular-aaa.woff") format("woff");
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: "Ploni-Light";
+            src: url("fonts/ploni-light-aaa.woff") format("woff");
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: "Ploni-Bold";
+            src: url("fonts/ploni-bold-aaa.woff") format("woff");
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: "Rubik";
+            src: url("fonts/Rubik-Regular.ttf") format("truetype");
+            font-display: swap;
+        }
+    </style>
+    <link rel="stylesheet" href="css/payment_link.css">
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/pub_sub.js"></script>
+    <script src="js/api_requests.js"></script>
+    <script src="js/payment_link.js"></script>
+</head>
+<body class="body js-body-color">
+<div class="content-wrapper">
+    <header class="header">
+    </header>
+    <main class="main">
+        <div class="wrapper hidden">
+            <h1 class="business-name js-business-name"></h1>
+
+            <div class="sum-text">סה״כ לתשלום:</div>
+            <div class="sum-wrapper">
+                <span class="js-sum"></span>
+                <span class="shekel">₪</span>
+            </div>
+
+            <div class="details-wrapper">
+                <div class="details-row">
+                    <div class="label">סוג העסקה:</div>
+                    <div class="value js-transaction-type"></div>
+                </div>
+                <div class="details-row js-description-row hidden">
+                    <div class="label">פירוט:</div>
+                    <div class="value payment-description js-description"></div>
+                </div>
+            </div>
+
+            <div class="payment-button-wrapper">
+                <button type="button" class="button js-payment-btn" aria-label="לתשלום">
+                    <span class="js-payment-sum button-text">לתשלום</span>
+                    <span class="js-sum"></span>
+                    <span class="button-shekel">₪</span>
+                </button>
+            </div>
+
+            <div class="payment-options-logos">
+                <img src="images/payment-icons.svg" alt="אפל פיי, גוגל פיי, ביט, אשראי">
+            </div>
+        </div>
+
+        <div class="error-wrapper hidden">
+            <div class="error-cross-wrapper">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2">
+                    <circle class="path error-circle" fill="none" stroke="#EB001B" stroke-width="6" stroke-miterlimit="10" cx="65.1" cy="65.1" r="62.1"></circle>
+                    <line class="path cross-line" fill="none" stroke="#EB001B" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" x1="34.4" y1="37.9" x2="95.8" y2="92.3"></line>
+                    <line class="path cross-line" fill="none" stroke="#EB001B" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" x1="95.8" y1="38" x2="34.4" y2="92.2"></line>
+                </svg>
+            </div>
+            <div class="js-error-message error-message"></div>
+        </div>
+
+        <div class="paid-request-wrapper hidden">
+            <div>
+                <div class="success-checkmark-wrapper">
+                    <div class="success-checkmark">
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2">
+                            <circle class="path circle" fill="none" stroke="#73AF55" stroke-width="6" stroke-miterlimit="10" cx="65.1" cy="65.1" r="62.1"></circle>
+                            <polyline class="path check" fill="none" stroke="#73AF55" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" points="100.2,40.2 51.5,88.8 29.8,67.5 "></polyline>
+                        </svg>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="paid-request-message">
+                        נהדר! התשלום בוצע בהצלחה                    </div>
+
+                    <div class="paid-request-button-wrapper">
+                        <button type="button" class="button js-paid-request-thanks" aria-label="תודה">
+                            תודה                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-grow-logo-wrapper">
+            <img class="footer-grow-logo" src="images/grow-logo.svg" alt="משולם פתרונות תשלום">
+            <div class="powered">Powered by</div>
+        </div>
+    </footer>
+</div>
+
+<!-- loader -->
+<div class="loader-wrapper js-loader open">
+    <div class="loader"></div>
+</div>
+
+<!-- load the payment sdk -->
+<script>
+    (function () {
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = 'https://cdn.meshulam.co.il/sdk/gs.min.js';
+        var x = document.getElementsByTagName('script')[0];
+        x.parentNode.insertBefore(s, x);
+    })();
+</script>
+€
+<!-- translations -->
+<script type="text/javascript">
+    let directDebitType = 'הוראת קבע';
+    let regularType = 'רגילה';
+    let paymentsType = 'תשלומים';
+    let unlimitedPaymentsText = 'ללא הגבלה';
+</script>
+
+<script type="text/javascript" src="js/_Incapsula_Resource.js" async=""></script>
+</body></html>

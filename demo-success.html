@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>תשלום בוצע בהצלחה</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f2f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            direction: rtl;
+        }
+
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 48px 40px;
+            text-align: center;
+            max-width: 420px;
+            width: 90%;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+        }
+
+        svg {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 24px;
+        }
+
+        h1 {
+            color: #1a1a5e;
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #666;
+            font-size: 15px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #1a1a5e;
+            color: white;
+            padding: 14px 40px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+        }
+
+        .demo-badge {
+            display: inline-block;
+            background: #fff3cd;
+            color: #856404;
+            border: 1px solid #ffc107;
+            border-radius: 6px;
+            padding: 6px 14px;
+            font-size: 13px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <div class="demo-badge">🔧 מצב Demo / وضع تجريبي</div>
+        <svg viewBox="0 0 130.2 130.2" xmlns="http://www.w3.org/2000/svg">
+            <circle fill="none" stroke="#73AF55" stroke-width="6" stroke-miterlimit="10" cx="65.1" cy="65.1" r="62.1" />
+            <polyline fill="none" stroke="#73AF55" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10"
+                points="100.2,40.2 51.5,88.8 29.8,67.5" />
+        </svg>
+        <h1>נהדר! התשלום בוצע בהצלחה</h1>
+        <p>זוהי סביבת הדגמה - אין חיוב אמיתי<br>هذه بيئة تجريبية - لا يوجد خصم حقيقي</p>
+        <a href="http://localhost:3000/?l=demo123" class="btn">חזרה לדף התשלום ←</a>
+    </div>
+</body>
+
+</html>

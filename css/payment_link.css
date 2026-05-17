@@ -1,0 +1,451 @@
+* {
+    box-sizing: border-box;
+}
+img {
+    width: 100%;
+}
+h1 {
+    margin: 0;
+
+}
+.body {
+    font-family: 'Ploni-Regular', Arial;
+    font-size: 4.26vw;
+    direction: rtl;
+    margin:0;
+    padding:0;
+    background: linear-gradient(0deg, #F9F9F9 86.36%, rgba(249, 249, 249, 0) 125.74%);
+}
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    height: 100dvh;
+}
+.header {
+    height: 15.6vw;
+    padding: 0 5.3vw 2vw;
+    flex:0 0 auto;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+.main {
+    flex: 1 1;
+    margin-top: 8vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.main .wrapper.hidden, .main .error-wrapper.hidden, .main .paid-request-wrapper.hidden {
+    display: none;
+}
+.main .wrapper, .main .error-wrapper, .main .paid-request-wrapper {
+    background: white;
+    border-radius: 5vw;
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.04);
+    width: 84vw;
+}
+.paid-request-wrapper .success-checkmark-wrapper .success-checkmark .path.check {
+    stroke-dashoffset: -100;
+    -webkit-animation: animate-check-mark .9s .35s ease-in-out forwards;
+    animation: animate-check-mark .9s .35s ease-in-out forwards;
+    animation-delay: 300ms;
+}
+.main .wrapper .business-name, .main .error-wrapper .error-message {
+    font-weight: 500;
+    font-size: 7.45vw;
+    text-align: center;
+    color: #050631;
+    padding: 3.8vw 3vw 1.35vw 3vw;
+    word-break: break-word;
+}
+.main .error-wrapper .error-message {
+    padding: 6vw 10.7vw 11vw;
+}
+.paid-request-wrapper .success-checkmark-wrapper,
+.main .error-wrapper .error-cross-wrapper {
+    margin: -7vw auto 0 auto;
+    width: 18vw;
+}
+.path {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 0;
+}
+.paid-request-wrapper .success-checkmark-wrapper .success-checkmark .path.circle,
+.error-circle {
+     stroke-dashoffset: 1000;
+     -webkit-animation: error-circle-stroke .9s ease-in-out forwards, animation-bg-color .3s ease-in-out forwards;
+     animation: error-circle-stroke .9s ease-in-out forwards, animation-bg-color .3s ease-in-out forwards;
+     animation-delay: 300ms;
+ }
+.cross-line {
+     stroke-dashoffset: 1000;
+     -webkit-animation: error-cross .9s .35s ease-in-out forwards;
+     animation: error-cross .9s .35s ease-in-out forwards;
+     animation-delay: 300ms;
+ }
+.main .paid-request-wrapper .paid-request-message {
+    font-weight: 500;
+    font-size: 7.47vw;
+    line-height: 10.97vw;
+    text-align: center;
+    padding: 6.67vw 10.67vw 20.27vw;
+    border-bottom: 2px solid #F0F0F0;
+}
+.main .paid-request-wrapper .paid-request-button-wrapper {
+    padding: 13.60vw 3.2vw 9.07vw;
+}
+.main .sum-wrapper {
+    font-size: 10vw;
+    font-weight: 500;
+    border-bottom: 1px solid #EAEAEA;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+}
+.main .shekel {
+    font-size: 6.4vw;
+    font-weight: 500;
+}
+.main .sum-text {
+    font-family: 'ploni-Light';
+    font-weight: 300;
+    padding: 0 3.2vw;
+}
+.main .details-wrapper {
+    font-family: 'ploni-Light';
+    padding: 4.3vw 3.2vw 8vw;
+}
+.main .details-wrapper .details-row {
+    display: flex;
+    margin-bottom: 3.125vw;
+}
+.main .details-wrapper .details-row:last-child {
+    margin-bottom: unset;
+}
+.main .details-wrapper .label {
+    width: 28.125vw;
+    flex:0 0 auto;
+}
+.main .details-wrapper .details-row.hidden {
+    display: none;
+}
+.main .details-wrapper .payment-description {
+    word-break: break-word;
+}
+.footer {
+    font-family: Rubik;
+    margin-top: auto;
+    flex:0 0 auto;
+    padding: 5vw 5vw 5.5vw;
+}
+.footer .logos-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.footer .footer-grow-logo-wrapper {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    flex:0 0 auto;
+    color:#807F84;
+    font-size: 3.75vw;
+    gap: 1vw;
+}
+.footer .powered {
+    white-space: nowrap;
+    margin-right: 3px;
+}
+.footer .footer-grow-logo {
+    width: 13.6vw;
+    flex:0 0 auto;
+}
+.wrapper .payment-options-logos {
+    display: flex;
+    width: 100%;
+    padding: 3.3vw 4.5vw 8.2vw 4.5vw;
+    pointer-events: none;
+}
+.payment-button-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 0 3.4vw;
+}
+.button {
+    font-family: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-radius: 2.67vw;
+    color: white;
+    font-size: 5.87vw;
+    line-height: 8.62vw;
+    font-weight: 600;
+    border:0;
+    padding: 2.93vw;
+    cursor: pointer;
+    background-color: #050631;
+    transition: background-color 200ms;
+}
+.button .button-text {
+    margin-left: 1.5vw;
+}
+.loader-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 10000;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    transition: all 200ms ease-out;
+    opacity:0;
+    pointer-events: none;
+    backdrop-filter: blur(3px);
+    background: rgba(0,0,0,.3);
+}
+.loader-wrapper.open {
+    opacity:1;
+    pointer-events: all;
+}
+.loader {
+     width: 43.75vw;
+     height: 43.75vw;
+     border-radius: 50%;
+     display: inline-block;
+     border-top: 3px solid #060530;
+     border-right: 3px solid transparent;
+     box-sizing: border-box;
+     animation: rotation 1s linear infinite;
+ }
+
+@media(min-width: 768px) {
+    .loader {
+        width: 18.23vw;
+        height: 18.23vw;
+    }
+}
+
+@media(min-width: 1200px) {
+    .body {
+        font-size: 1.4vw;
+    }
+    .header {
+        height: 3.11vw;
+    }
+    .main {
+        margin-top: 2vw;
+    }
+    .main .wrapper, .main .error-wrapper, .main .paid-request-wrapper {
+        border-radius: 0.85vw;
+        width: 30vw;
+    }
+    .main .wrapper .business-name, .main .error-wrapper .error-message {
+        font-size: 1.88vw;
+        padding: 2.03vw 2.25vw 0.75vw 2.25vw;
+    }
+    .paid-request-wrapper .success-checkmark-wrapper,
+    .main .error-wrapper .error-cross-wrapper {
+        margin: -2vw auto 0 auto;
+        width: 4.58vw;
+    }
+    .main .error-wrapper .error-message {
+        padding: 2vw 3.33vw 3.5vw;
+    }
+    .main .paid-request-wrapper .paid-request-message {
+        font-size: 2.33vw;
+        line-height: 3.43vw;
+        padding: 2vw 3.33vw 6.33vw;
+    }
+    .main .paid-request-wrapper .paid-request-button-wrapper {
+        padding: 4.25vw 2vw 2.83vw;
+    }
+    .main .sum-wrapper {
+        font-size: 3.75vw;
+    }
+    .main .shekel {
+        font-size: 1.88vw;
+    }
+    .main .sum-text {
+        padding: 0 1.88vw;
+    }
+    .main .details-wrapper {
+        padding: 1.73vw 1.7vw 2.5vw;
+    }
+    .main .details-wrapper .details-row {
+        margin-bottom: 1.2vw;
+    }
+    .main .details-wrapper .label {
+        width: 7.81vw;
+    }
+    .payment-button-wrapper {
+        margin: 0 2vw;
+    }
+    .button {
+        border-radius: 0.5vw;
+        font-size: 1.6vw;
+        line-height: 2.69vw;
+        padding: 0.7vw;
+    }
+    .button .button-text {
+        margin-left: 0.65vw;
+    }
+    .footer {
+        padding: 1vw 2.5vw 2vw;
+    }
+    .footer .footer-grow-logo-wrapper {
+        font-size: 1.2vw;
+        gap: 0.5vw;
+    }
+    .footer .footer-grow-logo {
+        width: 5.5vw;
+    }
+    .wrapper .payment-options-logos {
+        padding: 1.6vw 3vw 2.25vw 3vw;
+    }
+    .loader {
+        width: 11.67vw;
+        height: 11.67vw;
+    }
+}
+
+@media(min-width: 1500px) {
+    .body {
+        font-size: 1.15vw;
+    }
+    .header {
+        height: 3vw;
+    }
+    .main {
+        margin-top: 2vw;
+    }
+    .main .wrapper, .main .error-wrapper, .main .paid-request-wrapper {
+        width: 25vw;
+    }
+    .main .wrapper .business-name, .main .error-wrapper .error-message {
+        font-size: 1.7vw;
+        padding: 1.73vw 1.91vw 0.64vw 1.91vw;
+    }
+    .main .error-wrapper .error-message {
+        padding: 2vw 2.67vw 2.75vw;
+    }
+    .main .paid-request-wrapper .paid-request-message {
+        font-size: 1.86vw;
+        line-height: 2.74vw;
+        padding: 1.66vw 2.66vw 5.06vw;
+    }
+    .main .paid-request-wrapper .paid-request-button-wrapper {
+        padding: 3.4vw 2vw 2.26vw;
+    }
+    .main .sum-wrapper {
+        font-size: 3.2vw;
+    }
+    .main .shekel {
+        font-size: 1.6vw;
+    }
+    .main .sum-text {
+        padding: 0 1.6vw;
+    }
+    .main .details-wrapper {
+        padding: 1.45vw 1.45vw 2vw;
+    }
+    .main .details-wrapper .label {
+        width: 6.65vw;
+    }
+    .button {
+        font-size: 1.35vw;
+        line-height: 2.15vw;
+        padding: 0.45vw;
+    }
+    .button .button-text {
+        margin-left: 0.55vw;
+    }
+    .footer {
+        padding: 1vw 2.5vw 2vw;
+    }
+    .footer .footer-grow-logo-wrapper {
+        font-size: 1vw;
+    }
+    .footer .footer-grow-logo {
+        width: 3.5vw;
+    }
+}
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@-webkit-keyframes error-cross {
+    0% {
+        stroke-dashoffset: 1000;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+@keyframes error-cross {
+    0% {
+        stroke-dashoffset: 1000;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+@-webkit-keyframes error-circle-stroke {
+    0% {
+        stroke-dashoffset: 1000;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+@keyframes error-circle-stroke {
+    0% {
+        stroke-dashoffset: 1000;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+@-webkit-keyframes animate-check-mark {
+    0% {
+        stroke-dashoffset: -100;
+    }
+    100% {
+        stroke-dashoffset: 900;
+    }
+}
+@keyframes animate-check-mark {
+    0% {
+        stroke-dashoffset: -100;
+    }
+    100% {
+        stroke-dashoffset: 900;
+    }
+}
+@-webkit-keyframes animation-bg-color {
+    0% {
+        fill: transparent;
+    }
+    100% {
+        fill: #FFFFFF;
+    }
+}
+@keyframes animation-bg-color {
+    0% {
+        fill: transparent;
+    }
+    100% {
+        fill: #FFFFFF;
+    }
+}
