@@ -26,7 +26,7 @@ function drawPaymentLinkPageData(hash){
         err: null,
         data: {
             business_name: "גרו ביזנס",
-            sum: "250.00",
+            sum: "5.00",
             type_id: 2,
             description: "תשלום עבור שירות - Payment for service",
             payment_link_background_color: "#f0f2f5",
